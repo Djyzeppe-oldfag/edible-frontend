@@ -1,0 +1,39 @@
+.reviews {
+    margin-top: 53px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 130px;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+    }
+}
+
+.unit {
+    text-align: center;
+    img {
+        width: 100%;
+        max-height: 600px;
+        object-fit: cover;
+    }
+}
+
+.title {
+    margin-top: 50px;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 130%;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+}
+
+.description {
+    margin-top: 50px;
+    font-size: 26px;
+    line-height: 160%;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+}

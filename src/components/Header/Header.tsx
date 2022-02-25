@@ -1,81 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { AppState } from "../../store";
-import { useDispatch, useSelector } from "react-redux";
 
-import { getProfile } from "../../actions/profile";
-import { login, logout } from "../../actions/auth";
+import logotype_1 from "../../assets/header/logotype_1.svg";
+import logotype_2 from "../../assets/header/logotype_2.svg";
 
-import style from './Header.module.css';
-
-import logo from '../../assets/Header/icons/logo.svg';
-import avatar from '../../assets/Account/images/avatar.jpg';
-import money from '../../assets/Account/icons/money.svg';
-import Authorization from "../Popups/Authorization/Authorization";
+import style from "./Header.module.css";
 
 const Header = () => {
-    const [showAuth, setShowAuth] = useState(false);
-    const isAuth = useSelector((state: AppState) => state.auth.isAuth) || false;
-    const profile = useSelector((state: AppState) => state.profile.data);
+    var lastScroll = 0;
+    window.addEventListener("scroll", (e) => {
+        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const element = document.getElementById("header");
+        if (currentScroll > 0 && lastScroll <= currentScroll) {
+            lastScroll = currentScroll;
+            if (window.scrollY > 70 && element) {
+                element.style.top = "-500px";
+            };
+        } else {
+            lastScroll = currentScroll;
+            if (element) element.style.top = "0";
+        };
+    });
 
-    const [burgerActive, setBurgerActive] = useState<boolean>(false);
-
-    const dispatch = useDispatch();
-
-    const onSubbmitEvent = () => {
-        setShowAuth(true);
-        //dispatch(login({ email: "odjyzeppe@mail.ru", password: "asdqwe13A@" }));
-    };
-
-    const onAuthClose = () => setShowAuth(false);
-
-    useEffect(() => {
-        if (isAuth) dispatch(getProfile());
-    }, [isAuth]);
-
+    const [menu, setMenu] = useState(false);
     return (
-        <>
-            {
-                showAuth
-                ?<Authorization onClose={onAuthClose}/>
-                :''
-            }
-            <nav className={style.navbar}>
-                <img className={style.logo} src={ logo } alt="" />
-                { isAuth && <Link to="/profile" className={style.profile}>
-                    <div className={style.name}>{ profile?.name }</div>
-                    <div className={style.balance}>
-                        <span className={style.val}>{ profile?.balance }</span>
-                        <img src={ money } alt="" />
-                    </div>
-                    <img className={style.avatar} src={ avatar } alt="" />
-                </Link> }
-                <div className={style.burger+' '+(burgerActive && style.active || '')} onClick={() => setBurgerActive(prevState => !prevState)}/>
-                <div className={style.links}>
-                    
-                    <Link to="/" className={style.active}>Главная</Link>
-                    <Link to="/faq">FAQ</Link>
-                    <Link to="/">Лицензии</Link>
-                    <Link to="/forbeatmaker">Битмейкерам</Link>
-                    <Link to="/" className={style.inactive}>Реклама</Link>
+        <div className={style.wrapper} id="header">
+            <header className={style.header}>
+                <div className="container">
+                    <div className={style.content}>
+                        <div className={style.fixed}>
+                            <Link className={style.logotype} to="/">
+                                <img src={logotype_1} alt="" />
+                                <img className={style.edible} src={logotype_2} alt="" />
+                            </Link>
 
-                    <a className={style.language} href="#">ENG</a>
-                    
-                    { !isAuth ? <button className={style.entrance} onClick={ onSubbmitEvent }>Войти</button> :<>
-                        <div className={style.profile}>
-                            <Link to="/profile" className={style.name}>{ profile?.name }</Link>
-                            <div className={style.balance}>
-                                <span className={style.val}>{ profile?.balance  }</span>
-                                <img src={ money } alt="" />
+                            <div className={style.languages}>
+                                <div className={style.language+' '+style.active}>en</div>
+                                <div className={style.language}>rus</div>
                             </div>
-                            <img className={style.avatar} src={ avatar } alt="" onClick={ () => dispatch(logout()) }/>
                         </div>
-                        <button className={style.entrance+' '+style.exit} onClick={ () => dispatch(logout()) }>Выйти</button>
-                    </> }
+                        <div className={style.movable}>
+                            <div className={style.hamburger+' '+(menu && style.active)} onClick={ () => setMenu(prev => !prev) } />
+                            <div className={style.navigation}>
+                                <Link className={style.link} to="/categories">Услуги</Link>
+                                <Link className={style.link} to="/contacts">Связь</Link>
+                                <Link className={style.link} to="/reviews">Отзывы</Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
-        </>
-    )
-}
+            </header>
+            { menu && <div className={style.menu}>
+                <div className="container">
+                    <div className={style.menuNavigation}>
+                        <Link className={style.menuLink} to="/categories" onClick={ () => setMenu(prev => !prev) }>Услуги</Link>
+                        <Link className={style.menuLink} to="/contacts" onClick={ () => setMenu(prev => !prev) }>Связь</Link>
+                        <Link className={style.menuLink} to="/reviews" onClick={ () => setMenu(prev => !prev) }>Отзывы</Link>
+                    </div>
+                </div>
+                <button>Связаться</button>
+            </div> }
+        </div>
+    );
+};
 
 export default Header;

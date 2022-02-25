@@ -1,0 +1,250 @@
+.telephone {
+  margin-top: 80px;
+  font-size: 72px;
+  line-height: 130%;
+}
+
+@media screen and (max-width: 768px) {
+  .telephone {
+    margin-top: 60px;
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
+.social {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .social {
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+}
+
+.link {
+  margin-right: 30px;
+  font-size: 36px;
+  line-height: 130%;
+  color: #74ABFC;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .link {
+    margin-right: 20px;
+    font-size: 18px;
+    color: #FFFFFF;
+  }
+}
+
+.tags {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .tags {
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+}
+
+.tag {
+  margin-right: 30px;
+  font-size: 24px;
+  line-height: 130%;
+}
+
+@media screen and (max-width: 768px) {
+  .tag {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
+
+.title {
+  margin-top: 60px;
+  font-size: 48px;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+.fields {
+  width: 50%;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+@media screen and (max-width: 1400px) {
+  .fields {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fields {
+    margin-top: 30px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.input {
+  position: relative;
+  height: auto;
+}
+
+.input input {
+  width: 100%;
+  height: 100px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  font-size: 24px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.3);
+  padding-left: 25px;
+}
+
+.input input::placeholder {
+  font-size: 24px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .input input::placeholder {
+    font-size: 18px;
+  }
+}
+
+.input input:focus {
+  border: 1px solid #CDFF62;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  .input input {
+    height: 89px;
+    font-size: 18px;
+  }
+}
+
+.filled input {
+  color: white;
+}
+
+.placeholder {
+  position: absolute;
+  left: 25px;
+  bottom: 15px;
+  font-size: 16px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .placeholder {
+    font-size: 14px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .arrow {
+    top: 35px;
+  }
+}
+
+.menu {
+  margin-top: 15px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  max-width: 265px;
+  background: #0F0E15;
+  padding: 20px;
+}
+
+.option {
+  width: 100%;
+  height: 60px;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  color: white;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.send {
+  margin-top: 60px;
+  background: none;
+  font-size: 36px;
+  line-height: 130%;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .send {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+}
+
+.information {
+  margin-top: 60px;
+  font-size: 20px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.information span {
+  color: #74ABFC;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .information {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+}

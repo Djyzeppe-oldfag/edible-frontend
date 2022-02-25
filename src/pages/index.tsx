@@ -1,16 +1,16 @@
 import React from "react";
 
-import Roulete from "../components/Roulete/Roulete";
-import MainScreen from "../components/MainScreen/MainScreen";
-import ContentScreen from "../components/ContentScreen/ContentScreen";
+import Intro from "../components/Intro/Intro";
+import Cases from "../components/Cases/Cases";
+import Vacancies from "../components/Vacancies/Vacancies";
 
 const Home = () => {
     return (
-        <>
-            <Roulete />
-            <MainScreen />
-            <ContentScreen />
-        </>
+        <div className="home">
+            <Intro />
+            <Cases />
+            <Vacancies />
+        </div>
     );
 };
 

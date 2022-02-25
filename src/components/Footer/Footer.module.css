@@ -1,65 +1,119 @@
 .footer {
-  position: relative;
+  margin-top: 130px;
   width: 100%;
-  height: 144px;
-  background: #141414;
-  padding: 0 8% 0 8%;
-  box-sizing: border-box;
-  margin: 8% 0 0 0;
+  background: #07060D;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 80px 0;
 }
 
-.footer > .content {
-  position: relative;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #6C6C6C;
-  align-items: start;
-  justify-content: left;
-  padding: 26px 0 0 0;
-  box-sizing: border-box;
-  display: flex;
-}
-
-.footer > .content .companyName {
-  position: relative;
-  margin: 0 67px 0 0;
-}
-
-.footer > .content .map {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  width: 400px;
-}
-
-.footer > .content .map > a {
-  position: relative;
-  display: inline-block;
-  min-width: 150px;
-  margin: 12px 0 0 0;
-  color: #6C6C6C;
-  text-decoration: none;
-}
-
-.footer > .content .map > a:hover {
-  color: #ffc632;
-}
-
-.footer > .content .map > a:nth-of-type(-n+2) {
-  margin: 0;
-}
-
-@media (max-width: 661px) {
+@media screen and (max-width: 640px) {
   .footer {
-    min-height: 144px;
-    height: auto;
-    padding: 0 8% 8% 8%;
+    margin-top: 60px;
+    padding: 40px 0;
   }
-  .footer .content .map {
-    display: flex;
-    width: 100%;
-    margin: 0 0 0 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 130%;
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 36px;
   }
+}
+
+.subtitle {
+  margin-top: 30px;
+  font-size: 36px;
+  line-height: 140%;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 640px) {
+  .subtitle {
+    margin-top: 15px;
+    font-size: 24px;
+  }
+}
+
+.social {
+  display: flex;
+}
+
+.link {
+  font-size: 24px;
+  line-height: 130%;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .link {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+}
+
+.body {
+  margin-top: 100px;
+  font-size: 24px;
+  line-height: 130%;
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .body {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .body {
+    margin-top: 40px;
+  }
+}
+
+.rights {
+  white-space: nowrap;
+  margin-right: 110px;
+}
+
+@media screen and (max-width: 640px) {
+  .rights {
+    white-space: normal;
+    margin-right: 0;
+  }
+}
+
+.information {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .information {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+
+.documents {
+  cursor: pointer;
+}
+
+.author {
+  cursor: pointer;
 }
