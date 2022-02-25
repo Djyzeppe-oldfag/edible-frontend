@@ -1,0 +1,60 @@
+$tablet-w: 661px;
+$mobile-w: 376px;
+.footer {
+    position: relative;
+    width: 100%;
+    height: 144px;
+    background: #141414;
+    padding: 0 8% 0 8%;
+    box-sizing: border-box;
+    margin: 8% 0 0 0;
+    &>.content {
+        position: relative;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #6C6C6C;
+        align-items: start;
+        justify-content: left;
+        padding: 26px 0 0 0;
+        box-sizing: border-box;
+        display: flex;
+        .companyName {
+            position: relative;
+            margin: 0 67px 0 0;
+        }
+        .map {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            width: 400px;
+            &>a {
+                position: relative;
+                display: inline-block;
+                min-width: 150px;
+                margin: 12px 0 0 0;
+                color: #6C6C6C;
+                text-decoration: none;
+                &:hover {
+                    color: #ffc632;
+                }
+                &:nth-of-type(-n+2) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    @media (max-width: $tablet-w) {
+        min-height: 144px;
+        height: auto;
+        padding: 0 8% 8% 8%;
+        .content {
+            .map {
+                display: flex;
+                width: 100%;
+                margin: 0 0 0 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,188 @@
+.beat{
+    position: relative;
+    width: 100%;
+    background: #0D0D0D;
+    color: #C1C1C1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    &:nth-of-type(2n){
+        background: #070707;
+    }
+    &:hover{
+        background: #151515;
+    }
+    td{
+        height: calc(62px - 14px);
+        padding: 7px 0;
+        &:first-of-type{
+            padding-left: 7px;
+        }
+        &:last-of-type{
+            padding-right: 7px;
+        }
+        &.name{
+            padding-left: 10px;
+        }
+        &.date{
+            min-width: 150px;
+        }
+        &.company{
+            padding-right: 10px;
+        }
+        &.buttons{
+            position: relative;
+            width: 338px;
+            button{
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                padding: 0 13px;
+                height: 100%;
+                min-width: 150px;
+                background: var(--active-color);
+                border-radius: 5px;
+                border: 2px var(--active-color) solid;
+                box-sizing: border-box;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: color, background 0.3s ease;
+                &.download{
+                    margin-left: 23px;
+                }
+                &:hover{
+                    background: rgba(255, 198, 50, 0);
+                    color: var(--active-color);
+                    svg path{
+                        fill: var(--active-color);
+                    }
+                }
+                svg{
+                    position: relative;
+                    margin-right: 20px;
+                    path{
+                        transition: .3s ease;
+                    }
+                }
+            }
+        }
+        .avatar{
+            position: relative;
+            height: 100%;
+            display: block;
+        }
+    }
+    @media (max-width: 1200px){
+        td{
+            &.buttons{
+                width: 232px;
+                button{
+                    min-width: auto;
+                    text-align: center;
+                    &.download{
+                        margin-left: 8px;
+                    }
+                    svg{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1100px){
+        font-size: 12px;
+        td{
+            &:not(.date){
+                word-break:break-all;
+            }
+            &.date{
+                min-width: auto;
+                padding-left: 10px;
+            }
+            &.company{
+                padding-left: 10px;
+            }
+            &.buttons{
+                width: 167px;
+                button{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    @media (max-width: 768px){
+        td{
+            &.buttons{
+                width: 139px;
+                button{
+                    padding: 0 6px;
+                }
+            }
+        }
+    }
+    @media (max-width: 480px){
+        display: grid;
+        height: auto;
+        grid-template-columns: 48px 1fr 1fr;
+        td{   
+            display: flex;
+            height: 48px;
+            align-items: center;
+            &:hover{
+                &.buttons{
+                    opacity: 1;
+                    z-index: 10;
+                }
+            }
+            .avatar{
+                box-sizing: initial;
+                left: 4px;
+            }
+            &.date{
+                padding-right:8px;
+                justify-content: end;
+            }
+            &.name{
+                padding-left: 16px;
+            }
+            &.company{
+                display: none;
+            }
+            &.buttons{
+                position: relative;
+                width: 100%;
+                padding: 0 8px;
+                box-sizing: border-box;
+                height: 32px;
+                left: 0;
+                grid-column: 1/4;
+                padding-top: 0;
+                &:last-child{
+                    padding-right: 0;
+                }
+                button{
+                    width: calc(50% - 8px);
+                    
+                    justify-content: center;
+                    &.buy{
+                        
+                    }
+                    &:hover{
+                        background: #161616;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 370px){
+        td{
+            
+        }
+    }
+}

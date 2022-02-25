@@ -1,0 +1,114 @@
+.popup{
+    display: flex;
+    position: relative;
+    background: linear-gradient(180deg, #090909 0%, rgba(9, 9, 9, 0) 100%);
+    border-radius: 5px;
+    min-width: 100px;
+    min-height: 100px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.78);
+    backdrop-filter: blur(5px);
+    width: 770px;
+    height: 422px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    .close{
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        top: -54px;
+        right: -54px;
+        background: url(../../../assets/Popup/icons/close-button.svg) no-repeat;
+        background-size: 100%;
+        border: initial;
+        cursor: pointer;
+        @media (max-width: 854px){
+            right: 12px;
+        }
+    }
+    .content{
+        position: relative;
+        padding: 36px 20px 0 31px;
+        box-sizing: border-box;
+        .text{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 13px 30px 42px 47px;
+            background: #FFC632;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: 500;
+            font-size: 30px;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 10px;
+                left: 14px;
+                background: #000;
+                border-radius: 10px;
+            }
+        }
+    }
+    .consolePanel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 31px 0;
+        .error{
+            display: none;
+        }
+        button{
+            position: relative;
+            width: 428px;
+            height: 70px;
+            border: initial;
+            border-radius: 5px;
+            background: #FFC632;
+            border: 2px #FFC632 solid;
+            box-sizing: border-box;
+            color: #000;
+            font-size: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            &.waiting{
+                cursor: default;
+                text-transform: initial;
+                background: initial;
+                border: 1px solid #6C6C6C;
+                color: #6C6C6C;
+                font-weight: 400;
+            }
+            &:hover{
+                color: #FFC632;
+                border: 2px #FFC632 solid;
+                background:rgba(9, 9, 9, 0);
+            }
+        }
+    }
+    @media (max-width: 641px){
+        width: 600px;
+        height: 422px;
+        .content{
+            padding: 36px 16px 0 16px;
+            .text{
+                font-size: 20px;
+                padding: 13px;
+                padding-top: 36px;
+            }
+        }
+        .consolePanel{
+            position: relative;
+            top: 0%;
+            button{
+                width: calc(100% - 32px);
+            }
+        }
+    }
+}
+

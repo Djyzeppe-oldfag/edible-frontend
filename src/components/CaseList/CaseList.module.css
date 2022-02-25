@@ -1,0 +1,82 @@
+.CaseList {
+  position: relative;
+  margin: 80px 0 0 0;
+  z-index: 10;
+}
+
+.CaseList:first-of-type {
+  margin: 30px 0 0 0;
+}
+
+.CaseList > .content {
+  position: relative;
+  display: flex;
+  margin: 40px 0 0 0;
+  width: initial;
+  height: initial;
+  top: initial;
+  align-items: initial;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.CaseList > .title {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.CaseList > .title[tape-type="1"]::after {
+  content: '';
+  position: absolute;
+  width: 370px;
+  height: 162px;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background: url(../../assets/Cases/images/tape1.png) no-repeat;
+  background-size: 100%;
+  transform: translate(0px, -68px);
+  z-index: 0;
+}
+
+.CaseList > .title[tape-type="2"]::after {
+  content: '';
+  position: absolute;
+  width: 215px;
+  height: 94px;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background: url(../../assets/Cases/images/tape1.png) no-repeat;
+  background-size: 100%;
+  transform: translate(-157px, -11px) rotate(82.04deg);
+  z-index: 0;
+}
+
+.CaseList > .title[tape-type="3"]::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 489px;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background: url(../../assets/Cases/images/tape-right.png) no-repeat;
+  background-size: 100%;
+  transform: translate(120%, -81%) rotate(3.32deg);
+  z-index: 0;
+}
+
+@media (max-width: 641px) {
+  .CaseList > .content {
+    flex-wrap: wrap;
+  }
+}

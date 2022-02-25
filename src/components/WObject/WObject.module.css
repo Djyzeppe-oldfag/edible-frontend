@@ -1,0 +1,203 @@
+@charset "UTF-8";
+.case {
+  position: relative;
+  width: 235px;
+  margin: 0 20px 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 0 30px 0;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.case::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 2px;
+  transform: rotate(-5.09deg);
+  background: #FFC632;
+  z-index: 0;
+}
+
+.case:hover::after {
+  box-shadow: 0 0 12px 2px #FFC632;
+}
+
+.case > h2 {
+  position: absolute;
+  bottom: 245px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  width: 110px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  transform: translate(-4px, 0px);
+  word-wrap: break-word;
+}
+
+.case .image {
+  position: relative;
+  width: 228px;
+}
+
+.case .prices {
+  position: relative;
+  z-index: 3;
+  top: -35px;
+}
+
+.case .prices .oldPrice {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  text-align: center;
+  z-index: 3;
+}
+
+.case .prices .oldPrice::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 84px;
+  height: 34px;
+  background: #000;
+  z-index: 0;
+  transform: translate(11px, -5px) skewY(-6deg);
+}
+
+.case .prices .oldPrice .val {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  z-index: 3;
+}
+
+.case .prices .oldPrice .val::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -17px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 79px;
+  height: 1px;
+  background: #FFC632;
+  z-index: 4;
+}
+
+.case .prices .oldPrice .val::after {
+  content: '₽';
+  position: relative;
+  margin: 0 0 0 2px;
+  font-size: 15px;
+}
+
+.case .prices .price {
+  position: absolute;
+  top: 24px;
+  left: 57px;
+  text-align: center;
+  z-index: 2;
+}
+
+.case .prices .price::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 134px;
+  height: 50px;
+  background: #FFC632;
+  z-index: 0;
+  transform: translate(-42px, -2px) skewX(-4deg) skewY(-4deg);
+}
+
+.case .prices .price .val {
+  position: relative;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+  z-index: 3;
+}
+
+.case .prices .price .val::after {
+  content: '₽';
+  position: relative;
+  margin: 0 0 0 3px;
+  font-size: 30px;
+}
+
+.case .title {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: unset;
+  margin-top: 52px;
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 661px) {
+  .case {
+    width: 138px;
+    margin: 20px 10px 30px 10px;
+  }
+  .case > h2 {
+    bottom: 190px;
+    transform: translate(0px, 0px);
+    font-size: 20px;
+  }
+  .case .image {
+    width: 100%;
+  }
+  .case .prices {
+    top: -35px;
+  }
+  .case .prices .oldPrice {
+    top: 24px;
+    right: 15px;
+  }
+  .case .prices .oldPrice::after {
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 34px;
+    transform: translate(11px, -5px) skewY(-6deg);
+  }
+  .case .prices .oldPrice .val {
+    font-size: 15px;
+  }
+  .case .prices .oldPrice .val::before {
+    left: -9px;
+    width: 44px;
+    height: 1px;
+  }
+  .case .prices .oldPrice .val::after {
+    display: none;
+  }
+  .case .prices .price {
+    top: 35px;
+    left: 21px;
+  }
+  .case .prices .price::after {
+    right: 0;
+    left: 0;
+    width: 85px;
+    height: 44px;
+    transform: translate(-12px, -1px) skewX(-4deg) skewY(-4deg);
+  }
+  .case .prices .price .val::after {
+    display: none;
+  }
+}

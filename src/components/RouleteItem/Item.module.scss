@@ -1,0 +1,204 @@
+$tablet-w: 641px;
+$mobile-w: 376px;
+
+.item{
+    position: relative;
+    display: inline-block;
+    width: 115px;
+    margin-right: 5px;
+    &::after{
+        content: "";
+        padding-top: 90%;
+        display: block;
+    }
+    &:last-child{
+        margin-right: 0px;
+    }
+    .content{
+        position: absolute;
+        display: flex;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    &:nth-child(4n+3){
+        .bodyBorder{
+            background-image: url('../../assets/Roulete/icons/border-blue.svg');
+        }
+        .headLight{
+            background: var(--blue-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--blue-color);
+            }
+        }
+        .lowerLight{
+            background: var(--blue-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--blue-color);
+            }
+        }
+        svg path{
+            fill: #46C8FF;
+        }
+    }
+    &:nth-child(4n+1){
+        .bodyBorder{
+            background-image: url(../../assets/Roulete/icons/border-red.svg);
+        }
+        .headLight{
+            background: var(--red-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--red-color);
+            }
+        }
+        .lowerLight{
+            background: var(--red-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--red-color);
+            }
+        }
+        svg path{
+            fill: #FF4646;
+        }
+    }
+    &:nth-child(4n+2){
+        .bodyBorder{
+            background-image: url(../../assets/Roulete/icons/border-yellow.svg);
+        }
+        .headLight{
+            background: var(--yellow-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--yellow-color);
+            }
+        }
+        .lowerLight{
+            background: var(--yellow-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--yellow-color);
+            }
+        }
+        svg path{
+            fill: #FF9446;
+        }
+    }
+    &:nth-child(4n+4){
+        .bodyBorder{
+            background-image: url(../../assets/Roulete/icons/border-green.svg);
+        }
+        .headLight{
+            background: var(--green-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--green-color);
+            }
+        }
+        .lowerLight{
+            background: var(--green-color);
+            &::after{
+                box-shadow: 0 0px 12px var(--green-color);
+            }
+        }
+        svg path{
+            fill: #6BFF46;
+        }
+    }
+    .body{
+        padding: 10%;
+        img{
+            width: 100%;
+        }
+        z-index: 10;
+    }
+    figure{
+        margin: 0;
+        padding: 0;
+    }
+    .background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background: initial;
+        .bodyBorder{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            z-index: 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .headLight{
+            position: absolute;
+            width: 39%;
+            height: 7%;
+            top: 2.6%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 100px;
+            z-index: 4;
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 100px;
+            }
+        }
+        .lowerLight{
+            position: absolute;
+            width: 55%;
+            height: 2%;
+            bottom: 1%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 100px;
+            z-index: 4;
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 100px;
+            }
+        }
+        svg{
+            position: absolute;
+            width: 87%;
+            height: 52%;
+            bottom: -17%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            opacity: 0.7;
+        }
+    }
+    @media (max-width: $tablet-w){
+        width: 86px;
+        height: 78px;
+    }
+}
+
+.item.openCase{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    flex: 0 0 calc(20% - 0.7vw);
+    margin-right: 0.7vw;
+    z-index: 5;
+    .lowerLight{
+        bottom: 0;
+    }
+}

@@ -1,0 +1,452 @@
+.MainScreen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #0C0C0C 0%, #070707 100%);
+  padding-top: 75px;
+}
+
+.MainScreen > .content {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.MainScreen > .content .banner {
+  position: relative;
+  width: auto;
+}
+
+.MainScreen > .content .banner > .content {
+  position: relative;
+  display: flex;
+  height: 285px;
+  width: 1370px;
+  background: linear-gradient(180deg, #060606 0%, #1C1B0E 100%);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transform: translate(-100px, 0px);
+  z-index: 10;
+}
+
+.MainScreen > .content .banner > .content .photo {
+  position: relative;
+  height: 100%;
+  width: 662px;
+  margin: 0 0 0 10%;
+}
+
+.MainScreen > .content .banner > .content .photo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 662px;
+  height: 100%;
+  background: url(../../assets/MainScreen/icons/bpmdrop-logo-yellow.svg) 50% no-repeat;
+  background-position: 0%;
+  z-index: -1;
+}
+
+.MainScreen > .content .banner > .content .photo img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.MainScreen > .content .banner > .content .titles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  transform: translate(-10px, 0);
+  font-weight: 900;
+}
+
+.MainScreen > .content .banner > .content .titles h2 {
+  position: relative;
+  font-weight: inherit;
+  color: #fff;
+  font-size: 40px;
+  overflow-wrap: break-word;
+  margin: 0;
+  z-index: 3;
+}
+
+.MainScreen > .content .banner > .content .titles h1 {
+  position: relative;
+  font-weight: inherit;
+  color: rgba(0, 0, 0, 0);
+  font-size: 60px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #DA932F;
+  margin: -27px 0 0 0;
+  z-index: 1;
+}
+
+.MainScreen > .content .banner > .content .duckTape {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 345px;
+  height: 139px;
+  background: url(../../assets/MainScreen/images/banner-tape.png) 100% no-repeat;
+  transform: translate(55%, 20%) rotate(-18.92deg);
+}
+
+@media screen and (max-width: 1660px) {
+  .MainScreen > .content .banner > .content {
+    width: 100%;
+    transform: translate(0, 0);
+  }
+  .MainScreen > .content .banner > .content .duckTape {
+    left: 0;
+    right: initial;
+    transform: translate(-40%, 20%) rotate(-18.92deg);
+    width: 23%;
+    height: 71%;
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 1660px) {
+  .MainScreen > .content .banner {
+    width: 90%;
+  }
+  .MainScreen > .content .banner > .content {
+    height: auto;
+    width: 100%;
+  }
+  .MainScreen > .content .banner > .content .photo {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+  }
+  .MainScreen > .content .banner > .content .photo img {
+    width: 30%;
+    left: 15vw;
+    right: inherit;
+  }
+  .MainScreen > .content .banner > .content .photo::after {
+    left: 5vw;
+    width: 60%;
+    background-size: 100%;
+  }
+  .MainScreen > .content .banner > .content .titles {
+    padding: 16px 0;
+    transform: translate(60vw, 0);
+  }
+  .MainScreen > .content .banner > .content .titles h2 {
+    font-size: 2.5vw;
+  }
+  .MainScreen > .content .banner > .content .titles h1 {
+    font-size: 3.7vw;
+    margin: 0;
+  }
+  .MainScreen > .content .banner .ziplock {
+    width: 50vw;
+    height: 29.6vw;
+    transform: translate(-4%, 10%) rotate(7.07deg);
+  }
+  .MainScreen > .content .banner .ziplock::after {
+    width: 100%;
+    height: 83%;
+  }
+  .MainScreen > .content .banner .ziplock .body {
+    background-size: 100%;
+  }
+  .MainScreen > .content .banner .ziplock h2.title {
+    font-size: 2.3vw;
+    bottom: 3vw;
+    transform: translate(3vw, 0);
+  }
+}
+
+.MainScreen > .content .ziplock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 830px;
+  height: 490px;
+  z-index: 0;
+  transform: translate(-16%, 0px) rotate(7.07deg);
+}
+
+.MainScreen > .content .ziplock::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 801px;
+  height: 412px;
+  background: linear-gradient(296.27deg, #FFC632 0.18%, #FF6332 96.62%);
+  border-radius: 5px;
+  transform: translate(2%, -1%);
+  z-index: 0;
+}
+
+.MainScreen > .content .ziplock .body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/MainScreen/images/ziplock.png) 100% 100% no-repeat;
+  z-index: 2;
+  transform: translate(5%, 3%);
+}
+
+.MainScreen > .content .ziplock h2.title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  margin: auto;
+  z-index: 1;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  transform: translate(30px, 0px);
+}
+
+.MainScreen > .content .buttons {
+  position: absolute;
+  bottom: -80%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MainScreen > .content .buttons .arrow {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: url(../../assets/MainScreen/icons/arrow-navigation.svg) center no-repeat;
+}
+
+.MainScreen > .content .buttons > .content {
+  position: relative;
+  margin: 42px 0 0 0;
+}
+
+.MainScreen > .content .buttons > .content button {
+  position: relative;
+  width: 270px;
+  height: 50px;
+  margin: 0 15px;
+  background: inherit;
+  border: 1px solid #FFC632;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #FFC632;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.MainScreen > .content .buttons > .content button.filled {
+  background: #FFC632;
+  color: #000;
+}
+
+.MainScreen > .content .buttons > .content button.filled:hover {
+  background: rgba(0, 0, 0, 0);
+  color: var(--active-color);
+}
+
+.MainScreen > .content .buttons > .content button:nth-of-type(2):hover {
+  background: var(--active-color);
+  color: #000;
+}
+
+@media (max-width: 666px) {
+  .MainScreen > .content .buttons {
+    bottom: -160%;
+  }
+  .MainScreen > .content .buttons .arrow {
+    display: none;
+  }
+  .MainScreen > .content .buttons > .content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .MainScreen > .content .buttons > .content button:first-child {
+    margin-bottom: 3vw;
+  }
+}
+
+.MainScreen figure {
+  margin: 0;
+  padding: 0;
+}
+
+.MainScreen figure.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100px;
+  left: 0;
+  background: url(../../assets/MainScreen/icons/main-background.svg) bottom no-repeat;
+  background-size: 101%;
+  z-index: 2;
+  transform: translate3d(0, 0, 0);
+}
+
+.MainScreen figure.backgroundLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 4;
+  width: 1609px;
+  height: 493px;
+  background: url(../../assets/MainScreen/icons/background-logo.svg) no-repeat;
+  transform: translate3d(-18%, -55%, 0) rotate(-11.94deg);
+}
+
+.MainScreen figure.backgroundTape {
+  position: absolute;
+  width: 82%;
+  height: 20%;
+  bottom: 0;
+  left: 0;
+  background: url(../../assets/MainScreen/icons/main-background-tape.png) center no-repeat;
+  background-size: 100%;
+  transform: translate3d(0, 40%, 0) rotate(1.49deg);
+  z-index: 1;
+}
+
+.MainScreen figure.backgroundApplication {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 100px);
+  top: 0px;
+  right: 0;
+  background: url(../../assets/MainScreen/icons/main-background-application.svg) no-repeat;
+  background-size: 100%;
+  background-position: right bottom;
+  z-index: 3;
+  transform: translate3d(0, 0, 0);
+}
+
+.MainScreen figure.backgroundRadialGradientOrange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  filter: blur(144px);
+  transform: translate3d(-100%, -14%, 0);
+  width: 427px;
+  height: 460px;
+  background: #FF9446;
+  border-radius: 196.5px;
+}
+
+.MainScreen figure.backgroundRadialGradientYellow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  filter: blur(75px);
+  transform: translate3d(-48%, -40%, 0);
+  width: 477px;
+  height: 393px;
+  background: rgba(255, 198, 50, 0.57);
+  border-radius: 196.5px;
+}
+
+@media screen and (max-width: 641px) {
+  .MainScreen {
+    height: 60%;
+  }
+  .MainScreen > .content {
+    height: 100%;
+  }
+  .MainScreen > .content .banner > .content .ductTape {
+    width: 198px;
+    height: 80px;
+    transform: translate(-235%, 50%) rotate(-18.92deg);
+  }
+  .MainScreen > .content .banner .buttons {
+    bottom: -160%;
+  }
+  .MainScreen > .content .banner .buttons > .content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .MainScreen > .content .banner .buttons > .content button:first-child {
+    margin-bottom: 3vw;
+  }
+  figure.graphics {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure.graphics .backgroundLogo {
+    display: none;
+  }
+  figure.graphics .backgroundRadialGradientOrange {
+    transform: translate3d(-102%, -14%, 0);
+    width: 25%;
+    height: 25%;
+    filter: blur(74px);
+  }
+  figure.graphics .backgroundRadialGradientYellow {
+    transform: translate3d(-48%, -40%, 0);
+    width: 20%;
+    height: 20%;
+    filter: blur(75px);
+  }
+  figure.graphics .backgroundTape {
+    display: none;
+  }
+  figure.graphics .backgroundApplication {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 0px);
+    top: 50px;
+    right: -86px;
+    background: url(../../assets/MainScreen/icons/main-background-application.svg) no-repeat;
+    background-size: 200%;
+    background-position: right bottom;
+    z-index: 3;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .MainScreen > .content .banner .buttons {
+    bottom: -230%;
+  }
+  .MainScreen > .content .banner .buttons > .content button {
+    margin: 7px 15px;
+  }
+}
