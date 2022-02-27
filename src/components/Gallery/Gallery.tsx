@@ -2,29 +2,18 @@ import React from "react";
 
 import style from "./Gallery.module.css";
 
-import image from "../../assets/case/1.jpg";
+interface Props {
+    data?: string[]
+};
 
-const Gallery = () => {
+const Gallery = ({ data }: Props) => {
     return (
         <div className={style.gallery}>
-            <div className={style.unit}>
-                <img src={ image } alt="" />
-            </div>
-            <div className={style.unit}>
-                <img src={ image } alt="" />
-            </div>
-            <div className={style.unit}>
-                <img src={ image } alt="" />
-            </div>
-            <div className={style.unit}>
-                <img src={ image } alt="" />
-            </div>
-            <div className={style.unit}>
-                <img src={ image } alt="" />
-            </div>
-            <div className={style.unit}>
-                <img src={ image } alt="" />
-            </div>
+            { data?.map((item, index) => 
+                <div className={style.unit} key={ index }>
+                    <img src={`http://edibleworks.ru/${ item }`} alt="" />
+                </div>
+            ) }
         </div>
     );
 };

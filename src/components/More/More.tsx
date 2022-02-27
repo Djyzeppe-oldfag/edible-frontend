@@ -1,30 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import style from "./More.module.css";
 
-import image from "../../assets/more/1.png";
+interface Props {
+    data: [
+        {
+            image: string,
+            _id: string
+        }
+    ]
+};
 
-const More = () => {
+const More = ({ data }: Props) => {
     return (
         <div className={style.more}>
             <div className={style.title}>Ещё</div>
 
             <div className={style.collection}>
-                <div className={style.unit}>
-                    <img src={ image } alt="" />
-                </div>
-
-                <div className={style.unit}>
-                    <img src={ image } alt="" />
-                </div>
-
-                <div className={style.unit}>
-                    <img src={ image } alt="" />
-                </div>
-
-                <div className={style.unit}>
-                    <img src={ image } alt="" />
-                </div>
+                { data?.map(item => 
+                    <Link className={style.unit} key={ item._id } to={`/box/${ item._id }`}>
+                        <img src={`http://edibleworks.ru/${ item.image }`} alt="" />
+                    </Link>
+                ) }
             </div>
         </div>
     );
