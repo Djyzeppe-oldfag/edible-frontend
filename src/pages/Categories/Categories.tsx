@@ -20,7 +20,7 @@ const Categories = () => {
             <div className={style.categories}>
                 { !data.isLoading && data.data.map(item => 
                     <Link className={style.unit} to={`/product/${ item._id }`} key={ item._id }>
-                        <img src={`http://edibleworks.ru/${ item.image }`} alt="" />
+                        <img src={ item.image } alt="" />
                         <div className={style.title}>{ item.title }</div>
                     </Link>
                 ) }

@@ -11,7 +11,7 @@ const Gallery = ({ data }: Props) => {
         <div className={style.gallery}>
             { data?.map((item, index) => 
                 <div className={style.unit} key={ index }>
-                    <img src={`http://edibleworks.ru/${ item }`} alt="" />
+                    <img src={ item } alt="" />
                 </div>
             ) }
         </div>

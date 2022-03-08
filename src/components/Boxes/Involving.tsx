@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { WorkerState } from "../../types/store";
 
 import style from "./Boxes.module.css";
 
@@ -26,7 +25,7 @@ const Involving = ({ isLoading, boxes }: Props) => {
                         <div className={style.die}>
                             <div className={style.title}>{ item.role }</div>
                         </div>
-                        <img src={`http://edibleworks.ru/${ item.box.image }`} alt="" />
+                        <img src={ item.box.image } alt="" />
                         <div className={style.description}>{ item.box.description }</div>
                     </Link>
                 ) }

@@ -22,7 +22,7 @@ const Profile = () => {
     return (
         <>
             <div className={style.header}>
-                <img src={`http://edibleworks.ru/${ data.data?.image }`} alt="" />
+                <img src={ data.data?.image } alt="" />
                 <div className={style.wrapper}>
                     <div className={style.information}>
                         <div className={style.role}>{ data.data?.role }</div>

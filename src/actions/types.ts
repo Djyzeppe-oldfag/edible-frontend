@@ -1,3 +1,6 @@
+//localization
+export const CHANGE_LOCALIZATION = "CHANGE_LOCALIZATION";
+
 //boxes
 export const LOADING_BOXES = "LOADING_BOXES";
 export const GET_BOXES = "GET_BOXES";

@@ -3,6 +3,11 @@ export interface ApiResponse<T> {
     data: T
 };
 
+//localization
+export interface LocalizationState {
+    data: string
+};
+
 //boxes
 export interface BoxMI {
     description: string

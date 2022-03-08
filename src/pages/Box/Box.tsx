@@ -17,10 +17,6 @@ const Box = () => {
 
     useEffect(() => {
         if (id) dispatch(getBox(id));
-    }, []);
-
-    useEffect(() => {
-        if (id) dispatch(getBox(id));
         window.scrollTo(0, 0);
     }, [id]);
 

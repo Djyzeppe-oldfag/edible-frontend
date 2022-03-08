@@ -6,6 +6,7 @@
   z-index: 1;
   width: 100%;
   background: #07060D;
+  transition: top 0.25s ease-out;
 }
 
 .header {
@@ -107,7 +108,19 @@
   margin-left: 40px;
   font-size: 20px;
   line-height: 130%;
+  color: white;
   cursor: pointer;
+  position: relative;
+}
+
+.link:hover::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  border: 2px solid #FFFFFF;
+  cursor: default;
 }
 
 .hamburger {
@@ -117,7 +130,7 @@
   background: url(../../assets/header/hamburger.svg) no-repeat;
   background-size: 100% 100%;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 }
 
 .hamburger.active {
@@ -142,6 +155,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  animation: showAnimation 0.25s forwards;
 }
 
 .menu button {
@@ -159,6 +173,30 @@
   .menu {
     display: none;
   }
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menuButton {
+  position: absolute;
+  bottom: 10px;
+  width: 95%;
+  height: 79px;
+  background: #FFFFFF;
+  font-size: 18px;
+  line-height: 130%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .menuNavigation {

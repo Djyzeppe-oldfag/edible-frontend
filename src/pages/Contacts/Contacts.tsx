@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../../store";
+
+import { getCategories } from "../../actions/categories";
 
 import style from "./Contacts.module.css";
 
@@ -30,6 +35,13 @@ const Contacts = () => {
         setFields({ ...fields, contact: "" });
     };
 
+    const dispatch = useDispatch();
+    const data = useSelector((state: AppState) => state.categories);
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, []);
+
     return (
         <div className="container" ref={refs.menuRef}>
             <div className={style.telephone}>+7 960 683 90 30</div>
@@ -41,15 +53,9 @@ const Contacts = () => {
             </div>  
 
             <div className={style.tags}>
-                <div className={style.tag}>Логотип</div>
-                <div className={style.tag}>Интерфейс</div>
-                <div className={style.tag}>Айдентика</div>
-                <div className={style.tag}>Сайт</div>
-                <div className={style.tag}>Арт</div>
-                <div className={style.tag}>3D графика</div>
-                <div className={style.tag}>Приложение</div>
-                <div className={style.tag}>Маркетинг</div>
-                <div className={style.tag}>Менеджмент</div>
+                { !data.isLoading && data.data.map(item => 
+                    <Link className={style.tag} key={ item._id } to={`/product/${ item._id }`}>{ item.title }</Link>
+                ) }
             </div>
 
             <div className={style.title}>Расскажите о задачах, мы оперативно ответим</div>
@@ -58,7 +64,7 @@ const Contacts = () => {
                 <div className={`${style.input} ${ (fields.name.length > 0) && style.filled}`}>
                     <input 
                         type="text" 
-                        placeholder="Пусто"
+                        placeholder="Edible@work.ru"
                         name="email"
                         value={ fields.email }
                         onChange={ onChangeEvent }
@@ -70,7 +76,7 @@ const Contacts = () => {
                     <div className={`${style.input} ${ (fields.name.length > 0) && style.filled}`}>
                         <input 
                             type="text" 
-                            placeholder="Пусто"
+                            placeholder="Александр"
                             name="name"
                             value={ fields.name }
                             onChange={ onChangeEvent }
@@ -81,15 +87,16 @@ const Contacts = () => {
                     <div className={`${style.input} ${ (fields.name.length > 0) && style.filled}`}>
                         <input 
                             type={ (selected === 0 || selected === 3) ? "text" : "number" }
-                            placeholder="Пусто"
+                            placeholder={ (selected === 0 || selected === 3) ? "alex74737" : "88005553535" }
                             name="contact"
                             value={ fields.contact }
                             onChange={ onChangeEvent }
+                            min="1"
                         />
                         <div className={style.placeholder}>{ (selected === 0 || selected === 3) ? "страница" : "номер" }</div>
 
                         <div className={style.arrow} onClick={ () => setMenu(prev => !prev) }>
-                            <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className={`${ menu && style.rotate }`}width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 8L6.5 2L1 8" stroke="white" strokeWidth="2"/>
                             </svg>
                         </div>  
@@ -106,7 +113,7 @@ const Contacts = () => {
                 <div className={`${style.input} ${ (fields.name.length > 0) && style.filled}`}>
                     <input 
                         type="text" 
-                        placeholder="Пусто"
+                        placeholder="Я бы хотел расчитать стоимость дизайна"
                         name="question"
                         value={ fields.question }
                         onChange={ onChangeEvent }

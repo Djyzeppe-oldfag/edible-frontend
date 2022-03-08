@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../store";
 
-import { getCateogory } from "../../actions/categories";
+import { getCategories, getCateogory } from "../../actions/categories";
 
 import Boxes from "../../components/Boxes/Default";
 
@@ -12,28 +12,30 @@ import style from "./Product.module.css";
 const Product = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const data = useSelector((state: AppState) => state.category);
+    const category = useSelector((state: AppState) => state.category);
+    const categories = useSelector((state: AppState) => state.categories);
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, []);
 
     useEffect(() => {
         if (id) dispatch(getCateogory(id));
-    }, []);
+    }, [id]);
 
     return (
         <>
             <div className="container">
-                <div className={style.title}>{ data.data?.title }</div>
-                <div className={style.description}>{ data.data?.description }</div>
+                <div className={style.title}>{ category.data?.title }</div>
+                <div className={style.description}>{ category.data?.description }</div>
                 <div className={style.navigation}>
-                    <div className={`${style.link} ${style.active}`}>Ux/ui</div>
-                    <div className={style.link}>3D</div>
-                    <div className={style.link}>Андентика</div>
-                    <div className={style.link}>Графика</div>
-                    <div className={style.link}>Маркетинг</div>
-                    <div className={style.link}>Арт</div>
+                    { !categories.isLoading && categories.data.map(item => 
+                        <Link className={`${style.link} ${(id === item._id) && style.active}`} key={ item._id } to={`/product/${ item._id }`}>{ item.title }</Link>
+                    )}
                 </div>
             </div>
             
-            { data.data?.boxes && <Boxes isLoading={ data.isLoading } data={ data.data.boxes } /> }
+            { category.data?.boxes && <Boxes isLoading={ category.isLoading } data={ category.data.boxes } /> }
         </>
     );  
 };

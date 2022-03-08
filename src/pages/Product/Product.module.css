@@ -29,12 +29,6 @@
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1024px) {
-  .navigation {
-    justify-content: space-between;
-  }
-}
-
 .link {
   margin-right: 20px;
   font-size: 24px;

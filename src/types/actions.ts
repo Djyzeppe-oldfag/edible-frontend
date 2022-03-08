@@ -1,4 +1,5 @@
 import {
+    CHANGE_LOCALIZATION,
     LOADING_BOXES, GET_BOXES,
     LOADING_BOX, GET_BOX,
     LOADING_WORKER, GET_WORKER,
@@ -6,6 +7,13 @@ import {
     LOADING_CATEGORY, GET_CATEGORY
 } from "../actions/types";
 import { BoxMI, BoxFI, Worker, Category } from "./store";
+
+//localization
+interface ChangeLocalisationAction {
+    type: typeof CHANGE_LOCALIZATION,
+    data: string
+}
+export type LocalizationActionTypes = ChangeLocalisationAction
 
 //boxes
 interface LoadingBoxesAction {

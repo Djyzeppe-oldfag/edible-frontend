@@ -2,6 +2,7 @@
     margin-top: 80px;
     font-size: 72px;
     line-height: 130%;
+    cursor: pointer;
     @media screen and (max-width: 768px) {
         margin-top: 60px;
         font-size: 36px;
@@ -37,7 +38,6 @@
     display: flex;
     flex-wrap: wrap;
     @media screen and (max-width: 768px) {
-        justify-content: space-between;
         margin-top: 30px;
     }
 }
@@ -135,12 +135,21 @@
 
 .arrow {
     position: absolute;
-    top: 45px;
-    right: 20px;
+    width: 70px;
+    height: 100%;
+    top: 0;
+    right: 0;
     cursor: pointer;
-    @media screen and (max-width: 768px) {
-        top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        transition: transform 0.25s ease-out;
     }
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 .menu {
@@ -151,6 +160,16 @@
     max-width: 265px;
     background: #0F0E15;
     padding: 20px;
+    animation: showAnimation 0.25s forwards;
+}
+
+@keyframes showAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .option {

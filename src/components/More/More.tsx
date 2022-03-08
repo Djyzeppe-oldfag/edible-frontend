@@ -18,9 +18,9 @@ const More = ({ data }: Props) => {
             <div className={style.title}>Ещё</div>
 
             <div className={style.collection}>
-                { data?.map(item => 
+                { data.map(item => 
                     <Link className={style.unit} key={ item._id } to={`/box/${ item._id }`}>
-                        <img src={`http://edibleworks.ru/${ item.image }`} alt="" />
+                        <img src={ item.image } alt="" />
                     </Link>
                 ) }
             </div>
